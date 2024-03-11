@@ -4,16 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/styles.css">
     <link href="./src/styles/output.css" rel="stylesheet">
     <title>Shop</title>
 </head>
 
 <body>
-    <nav id="navbar" class="w-full">
+    <nav class="w-full flex flex-col justify-between items-center px-14 py-4">
+        <div class="w-full flex justify-between items-center">
+            <ul class="flex gap-5 p-3 w-full">
+                <li
+                    class="text-secondaryColor text-sm font-semibold transition-all duration-300 ease-in-out hover:text-primaryColor ">
+                    <a href="">خانه</a>
+                </li>
+                <li
+                    class="text-secondaryColor text-sm font-semibold transition-all duration-300 ease-in-out hover:text-primaryColor ">
+                    <a href="">فروشگاه</a>
+                </li>
+                <li
+                    class="text-secondaryColor text-sm font-semibold transition-all duration-300 ease-in-out hover:text-primaryColor ">
+                    <a href="">ارتباط با ما</a>
+                </li>
+            </ul>
+            <ul class="flex gap-3 p-3 items-center flex-row-reverse w-full">
+                <li><img src="./src/assets/images/basket.png" alt="" class="w-6"></li>
+                <li><img src="./src/assets/images/profile.png" alt="" class="w-6"></li>
+            </ul>
+        </div>
+        <form action="#" class="w-full flex border-secondaryColor border-[0.5px] justify-between rounded-lg p-1">
+            <input type="text" placeholder="جستجو ..." class="w-full px-4 py-1 focus:outline-0">
+            <button class="bg-primaryColor rounded-lg p-1 flex justify-center items-center w-fit">
+                <img src="./src/assets/images/search.png" alt="" width="20">
+            </button>
+        </form>
     </nav>
+    <header>
+        <div></div>
+        <div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
 
-
-    <script src="/src/scripts/navbar.js"></script>
 </body>
 
 </html>
