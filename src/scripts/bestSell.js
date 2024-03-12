@@ -18,7 +18,7 @@ const bestSell = async () => {
       const data = element[i];
       console.log(data);
       //customize description world length
-      let maxLength = 50;
+      let maxLength = 35;
       let descriptionText = data.description;
       let words = descriptionText.split(" ");
       console.log(words.length > maxLength);
@@ -39,7 +39,7 @@ const bestSell = async () => {
       <h4 class="text-[15px] font-bold uppercase min-h-12">${data.title}</h4>
       <span class="capitalize text-secondaryColor">قیمت : <span
               class="text-primaryColor">${data.price}$</span></span>
-      <p id="description" class="text-[10px] text-justify font-thin w-[90%] mb-8">${descriptionText}</p>
+      <p id="description" class="text-[12px] text-justify font-thin w-[95%] mb-8">${descriptionText}</p>
       <span class="text-sm text-primaryColor absolute bottom-14 z-20"><a>${data.category}</a></span>
       <div class="flex gap-2 absolute bottom-4 z-10">
           <div

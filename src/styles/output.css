@@ -995,6 +995,10 @@ video {
   width: 100%;
 }
 
+.w-\[95\%\] {
+  width: 95%;
+}
+
 .flex-auto {
   flex: 1 1 auto;
 }
