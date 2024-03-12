@@ -10,7 +10,9 @@
 </head>
 
 <body>
+    <!-- navbar section -->
     <nav class="w-full flex flex-col justify-between items-center px-14 py-4">
+        <!-- menu section -->
         <div class="w-full flex justify-between items-center">
             <ul class="flex gap-5 p-3 w-full">
                 <li
@@ -31,15 +33,17 @@
                 <li><img src="./src/assets/images/profile.png" alt="" class="w-6"></li>
             </ul>
         </div>
-        <form action="#" class="w-full flex border-secondaryColor border-[0.5px] justify-between rounded-lg p-1">
+        <!-- search section -->
+        <form action="#" class="w-full flex border-secondaryColor border-[0.5px] justify-between rounded-md p-1">
             <input type="text" placeholder="جستجو ..."
                 class="w-full px-4 py-1 focus:outline-0 text-primaryColor text-sm font-medium">
-            <button class="bg-primaryColor rounded-lg p-1 flex justify-center items-center w-fit">
+            <button class="bg-primaryColor rounded-md p-1 flex justify-center items-center w-fit">
                 <img src="./src/assets/images/search.png" alt="" width="20">
             </button>
         </form>
     </nav>
-    <header class="flex w-full justify-center items-center px-16 py-3 gap-3">
+    <!-- header section -->
+    <header class="flex w-full justify-center items-center px-16 py-3 gap-3 my-10">
         <div class="w-full rounded-md">
             <img src="./src/assets/images/firstSlider.jpg" alt="" class="rounded-md">
         </div>
@@ -50,7 +54,35 @@
             </div>
         </div>
     </header>
+    <!-- main section -->
+    <main class="px-16 py-3 my-10">
+        <!-- call to action section -->
+        <div class="w-full bg-primaryColor px-6 py-3 rounded-md flex justify-between items-center">
+            <h3 class="text-white font-semibold">جهت مشاوره با ما تماس بگیرید</h3>
+            <div class="bg-white text-primaryColor w-fit px-4 text-center rounded-md">
+                <a href="tel:+989115447316">
+                    <span class="text-sm">تماس</span>
+                </a>
+            </div>
+        </div>
+        <!-- best selling section -->
+        <div class="w-full px-6 py-12 flex gap-4">
+            <div class="flex flex-col w-3/4 gap-4">
+                <h3 class="font-semibold">پرفروش ترین محصولات</h3>
+                <div id="best-sell" class="flex gap-2 flex-auto">
 
+                </div>
+            </div>
+            <div class="w-1/4 h-[550px]">
+                <a href="#">
+                    <img src="./src/assets/images/best-sell-banner.jpg" alt="" class="rounded-md h-full">
+                </a>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="./src/scripts/bestSell.js"></script>
 </body>
 
 </html>
