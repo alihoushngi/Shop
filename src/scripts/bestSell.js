@@ -12,20 +12,30 @@ const bestSell = async () => {
     .then((res) => res.json())
     .then((data) => result.push(data));
 
+  console.log(result);
   // create html section with data
   result.forEach((element) => {
     for (let i = 0; i < 3; i++) {
       const data = element[i];
-      console.log(data);
-      //customize description world length
-      let maxLength = 35;
-      let descriptionText = data.description;
-      let words = descriptionText.split(" ");
-      console.log(words.length > maxLength);
-      if (words.length > maxLength) {
-        descriptionText = words.slice(0, maxLength).join(" ") + "...";
-      }
 
+      //customize title world length
+      let maxTitleLength = 3;
+      let titleText = data.title;
+      let titleWords = titleText.split(" ");
+      if (titleWords.length > maxTitleLength) {
+        titleText = titleWords.slice(0, maxTitleLength).join(" ") + "...";
+      }
+      // set custom description to my data description
+      data.title = titleText;
+      console.log(titleText);
+
+      //customize description world length
+      let maxDesLength = 35;
+      let descriptionText = data.description;
+      let desWords = descriptionText.split(" ");
+      if (desWords.length > maxDesLength) {
+        descriptionText = desWords.slice(0, maxDesLength).join(" ") + "...";
+      }
       // set custom description to my data description
       data.description = descriptionText;
 
@@ -57,10 +67,10 @@ const bestSell = async () => {
   </div>
       `;
     }
-  });
+    // show data on document
 
-  // show data on document
-  bestSellResult.innerHTML = html;
+    bestSellResult.innerHTML = html;
+  });
 };
 
 bestSell();
