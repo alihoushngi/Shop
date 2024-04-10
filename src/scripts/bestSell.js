@@ -7,12 +7,11 @@ const bestSell = async () => {
   let result = [];
   let html = "";
 
-  // fetch data from apt
+  // fetch data from api
   await fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
     .then((data) => result.push(data));
 
-  console.log(result);
   // create html section with data
   result.forEach((element) => {
     for (let i = 0; i < 3; i++) {
@@ -27,10 +26,9 @@ const bestSell = async () => {
       }
       // set custom description to my data description
       data.title = titleText;
-      console.log(titleText);
 
       //customize description world length
-      let maxDesLength = 35;
+      let maxDesLength = 10;
       let descriptionText = data.description;
       let desWords = descriptionText.split(" ");
       if (desWords.length > maxDesLength) {
