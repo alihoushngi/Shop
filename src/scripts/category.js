@@ -3,7 +3,6 @@ const catResult = document.querySelector("#category-list");
 
 // fetch categories from FakeStore API
 const cat = async () => {
-  //   let catRes = [];
   let html = "";
 
   await fetch("https://fakestoreapi.com/products/categories")
