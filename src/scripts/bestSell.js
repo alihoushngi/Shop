@@ -1,6 +1,22 @@
 // select data result section
 const bestSellResult = document.querySelector("#best-sell");
 
+// start and end number
+let startNumber = null;
+let endNumber = null;
+
+function generateRandomRanges(iterations) {
+  for (let i = 0; i < iterations; i++) {
+    const start = Math.floor(Math.random() * 7) + 1; // Generate random number between 1 and 7 (inclusive)
+    const end = start + 3; // Ensure end is 2 more than start
+    startNumber = start;
+    endNumber = end;
+  }
+}
+
+// Specify how many random ranges to generate (e.g., 3)
+generateRandomRanges(1);
+
 // fetch data
 const bestSell = async () => {
   // create empty array and html for push and show data
@@ -14,7 +30,7 @@ const bestSell = async () => {
 
   // create html section with data
   result.forEach((element) => {
-    for (let i = 0; i < 3; i++) {
+    for (let i = startNumber; i < endNumber; i++) {
       const data = element[i];
 
       //customize title world length

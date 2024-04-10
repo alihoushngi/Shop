@@ -12,9 +12,12 @@ const expSell = async () => {
     .then((res) => res.json())
     .then((data) => result.push(data));
 
+  // Sort data by price (descending)
+  result[0].sort((a, b) => b.price - a.price);
+
   // create html section with data
   result.forEach((element) => {
-    for (let i = 3; i < 6; i++) {
+    for (let i = 0; i < 3; i++) {
       const data = element[i];
 
       //customize title world length
