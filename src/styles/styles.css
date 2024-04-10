@@ -80,3 +80,12 @@ body {
   -webkit-line-clamp: 5; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
+
+.activeLink {
+  color: #9e1817;
+  border-bottom: 2px solid #9e1817;
+}
+
+.activeLink:hover {
+  color: #881414;
+}
