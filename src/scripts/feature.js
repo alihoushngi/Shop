@@ -9,10 +9,10 @@ const featureList = [
   "پشتیبانی ۲۴ ساعته",
   "کمترین قیمت",
 ];
-let html = "";
+let features = "";
 
 featureList.map((data) => {
-  html += `
+  features += `
                   <li class="flex justify-center items-center w-40 h-24 rounded-md capitalize cursor-pointer transition-all duration-300 hover:shadow-md bg-primaryColor text-white hover:text-primaryColor hover:bg-white">
                     ${data}
                   </li>
@@ -20,4 +20,4 @@ featureList.map((data) => {
 });
 
 // select feature from array and pin to html
-catFeature.innerHTML = html;
+catFeature.innerHTML = features;
