@@ -45,12 +45,45 @@
     </nav>
     <!-- header section -->
     <header class="p-4">
-        <h1 class="text-center text-2xl font-bold text-primaryColor">ارتباط با ما</h1>
+        <h1 class="text-center text-2xl font-bold text-primaryColor mb-4">ارتباط با ما</h1>
+        <h2 class="text-center text-md font-normal text-secondaryColor">جهت نقد ، شکایات و پرسیدن سوال می توانید از طریق
+            فرم زیر با ما در ارتباط باشید</h2>
     </header>
 
 
     <!-- main section -->
-    <main></main>
+    <main class="px-16 py-3 my-3 flex gap-4 justify-between items-center gap-3">
+        <div class="w-1/2">
+            <form action="#" class="flex flex-col shadow-md p-5 rounded-md">
+                <!-- name -->
+                <label for="name" class="text-primaryColor text-sm my-3">نام و نام خانوادگی</label>
+                <input
+                    class="rounded-md p-2 bg-gray-100 text-primaryColor focus-visible:outline-1 focus-visible:outline-secondaryColor"
+                    type="text" name="name" id="name" required>
+                <!-- number -->
+                <label for="number" class="text-primaryColor text-sm my-3">شماره تماس</label>
+                <input
+                    class="rounded-md p-2 bg-gray-100 text-primaryColor focus-visible:outline-1 focus-visible:outline-secondaryColor"
+                    type="text" name="number" id="number" placeholder="09" required>
+                <!-- email -->
+                <label for="email" class="text-primaryColor text-sm my-3">ایمیل</label>
+                <input
+                    class="rounded-md p-2 bg-gray-100 text-primaryColor focus-visible:outline-1 focus-visible:outline-secondaryColor"
+                    type="email" name="email" id="email">
+                <!-- text -->
+                <label for="text" class="text-primaryColor text-sm my-3">متن خود را بنویسید</label>
+                <textarea
+                    class="rounded-md p-2 bg-gray-100 text-primaryColor focus-visible:outline-1 focus-visible:outline-secondaryColor"
+                    name="text" id="text" cols="50" rows="3" required></textarea>
+                <!-- submit button -->
+                <button type="submit"
+                    class="bg-primaryColor text-white my-3 p-2 rounded-md transition-all duration-300 hover:bg-primaryColorHover">ارسال</button>
+            </form>
+        </div>
+        <div class="w-1/2 flex justify-center items-center">
+            <img src="../../src/assets/images/contactUsImage.png" alt="form-image">
+        </div>
+    </main>
 
 
     <!-- footer section -->
