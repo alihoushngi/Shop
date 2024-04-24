@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../src/styles/styles.css">
     <link href="../../src/styles/output.css" rel="stylesheet">
-    <title>Shop</title>
+    <title>Contact Us</title>
 </head>
 
-<body class="min-h-screen relative">
+<body>
     <!-- navbar section -->
     <nav class="w-full flex flex-col justify-between items-center px-14 py-4">
         <!-- menu section -->
@@ -17,15 +17,16 @@
             <ul class="flex gap-5 p-3 w-full" id="menu">
                 <li
                     class="text-secondaryColor text-sm font-semibold transition-all duration-300 ease-in-out hover:text-primaryColor ">
-                    <a href="/">خانه</a>
+                    <a href="../../index.html">خانه</a>
                 </li>
                 <li
                     class="text-secondaryColor text-sm font-semibold transition-all duration-300 ease-in-out hover:text-primaryColor ">
-                    <a href="/pages/shop/shop.html">فروشگاه</a>
+                    <a href="../shop/shop.html">فروشگاه</a>
                 </li>
+
                 <li
                     class="text-secondaryColor text-sm font-semibold transition-all duration-300 ease-in-out hover:text-primaryColor ">
-                    <a href="/">ارتباط با ما</a>
+                    <a href="/pages/contactUs/contact-us.html">ارتباط با ما</a>
                 </li>
             </ul>
             <ul class="flex gap-3 p-3 items-center flex-row-reverse w-full">
@@ -42,21 +43,15 @@
             </button>
         </form>
     </nav>
+    <!-- header section -->
+    <header class="p-4">
+        <h1 class="text-center text-2xl font-bold text-primaryColor">ارتباط با ما</h1>
+    </header>
+
 
     <!-- main section -->
-    <main class="px-16 py-3 my-10 flex gap-4 justify-center">
-        <!-- side bar section for control facture's -->
-        <aside class="w-1/4 shadow-md rounded-md p-5 h-full">
-            <!-- catagories -->
-            <ul id="category-result">
-            </ul>
-        </aside>
+    <main></main>
 
-        <!-- product cards -->
-        <section class="w-3/4 shadow-md rounded-md p-5 h-full flex gap-2 flex-auto flex-wrap justify-left items-center"
-            id="product-result">
-        </section>
-    </main>
 
     <!-- footer section -->
     <footer class="bg-primaryColor min-w-full min-h-5 py-20 px-12 text-white flex gap-3 items-start">
@@ -98,8 +93,6 @@
 
     <!-- scripts -->
     <script src="../../src/scripts/activeLinkFinder.js"></script>
-    <script src="../../src/scripts/fetchCatagoryForShop.js"></script>
-    <script src="../../src/scripts/fetchProduct.js"></script>
 </body>
 
 </html>
