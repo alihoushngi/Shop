@@ -31,7 +31,7 @@ const expSell = async () => {
       data.title = titleText;
 
       //customize description world length
-      let maxDesLength = 10;
+      let maxDesLength = 30;
       let descriptionText = data.description;
       let desWords = descriptionText.split(" ");
       if (desWords.length > maxDesLength) {
@@ -45,7 +45,7 @@ const expSell = async () => {
       <div
       class="w-1/3 max-h-[inherit] min-h-[400px] flex flex-col justify-start relative items-center shadow-md px-2 py-4 rounded-md gap-2 transition-all duration-300 ease-in-out hover:shadow-lg hover:cursor-pointer">
       <div class="">
-      <img src="${data.image}" alt="" class="object-cover bg-no-repeat bg-top w-full rounded-md max-h-[200px] min-h-[200px]">
+      <img src="${data.image}" alt="" class="object-cover bg-no-repeat bg-top w-full rounded-md max-h-[140px] min-h-[140px]">
       </div>
       <h4 class="text-[15px] font-bold uppercase min-h-12">${data.title}</h4>
       <span class="capitalize text-secondaryColor">قیمت : <span

@@ -866,6 +866,10 @@ video {
   max-height: inherit;
 }
 
+.max-h-\[140px\] {
+  max-height: 140px;
+}
+
 .min-h-12 {
   min-height: 3rem;
 }
@@ -888,6 +892,10 @@ video {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.min-h-\[140px\] {
+  min-height: 140px;
 }
 
 .w-1\/2 {
