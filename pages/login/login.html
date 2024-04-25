@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl" class="bg-primaryColor">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,89 @@
 </head>
 
 <body>
+    <header class="flex justify-center items-center p-6">
+        <h1 class="text-2xl font-extrabold text-white">ثبت نام یا ورود</h1>
+    </header>
+    <main class="bg-white m-14 flex gap-3 p-10 rounded-md">
+        <!-- login form -->
+        <div class="w-1/2 flex flex-col gap-3">
+            <form action="#" class="flex text-sm flex-col p-5 border border-gray-200 rounded-md gap-8 shadow-sm">
+                <!-- name -->
+                <input type="text" name="name" id="login-name" placeholder="نام کاربری یا ایمیل"
+                    class="p-2 border-b border-b-primaryColor rounded-md text-primaryColor transition-all duration-100 focus-visible:border-b-0 focus-visible:outline focus-visible:outline-primaryColor">
+                <div class="flex justify-center items-center gap-2">
+                    <!-- password -->
+                    <input type="password" name="password" id="login-password" placeholder="رمز عبور"
+                        class="p-2 w-full relative border-b border-b-primaryColor rounded-md text-primaryColor transition-all duration-100 focus-visible:border-b-0 focus-visible:outline focus-visible:outline-primaryColor">
+                    <!-- show Password -->
+                    <img src="../../src/assets/images/eyePassword.png" alt="show password" width="20" height="20"
+                        class="cursor-pointer transition-all duration-700 opacity-40 hover:opacity-100"
+                        id="show-login-password">
+                </div>
+                <!-- submit button -->
+                <button type="submit"
+                    class="bg-primaryColor text-white p-2 rounded-md hover:bg-primaryColorHover transition-all duration-300">ورود</button>
+                <!-- forget password -->
+                <span class="text-center"><a href="" class="text-primaryColor text-sm">رمزم چی بود
+                        ؟</a></span>
+            </form>
+            <div class="flex gap-3">
+                <div
+                    class="flex justify-center items-center gap-2 w-full bg-slate-100 p-4 rounded-md cursor-pointer shadow-sm hover:bg-slate-200 transition-all duration-300">
+                    <span>ثبت نام با گوگل</span>
+                    <img src="../../src/assets/images/google.png" alt="google register" width="30" height="30">
+                </div>
+                <div
+                    class="flex justify-center items-center gap-2 w-full bg-slate-100 p-4 rounded-md cursor-pointer shadow-sm hover:bg-slate-200 transition-all duration-300">
+                    <span>ثبت نام با گیت هاب</span>
+                    <img src="../../src/assets/images/github.png" alt="github register" width="30" height="30">
+                </div>
+            </div>
+            <div class="w-full flex justify-center items-center">
+                <span class="text-center text-sm font-thin">تمامی حقوق شما محفوظه پیش ما نگران نباش</span>
+            </div>
+        </div>
+        <!-- register form -->
+        <div class="w-1/2">
+            <form action="#" class="flex text-sm flex-col p-5 border border-gray-200 rounded-md gap-8 shadow-sm">
+                <!-- name -->
+                <input type="text" name="name" id="register-name" placeholder="نام و نام خانوادگی"
+                    class="p-2 border-b border-b-primaryColor rounded-md text-primaryColor transition-all duration-100 focus-visible:border-b-0 focus-visible:outline focus-visible:outline-primaryColor">
+                <!-- username -->
+                <input type="text" name="username" id="username" placeholder="نام کاربری"
+                    class="p-2 border-b border-b-primaryColor rounded-md text-primaryColor transition-all duration-100 focus-visible:border-b-0 focus-visible:outline focus-visible:outline-primaryColor">
+                <!-- email -->
+                <input type="email" name="email" id="email" placeholder="ایمیل"
+                    class="p-2 border-b border-b-primaryColor rounded-md text-primaryColor transition-all duration-100 focus-visible:border-b-0 focus-visible:outline focus-visible:outline-primaryColor">
+                <!-- password -->
+                <div class="flex justify-center items-center gap-2">
+                    <input type="password" name="password" id="register-password" placeholder="رمز عبور"
+                        class="p-2 w-full relative border-b border-b-primaryColor rounded-md text-primaryColor transition-all duration-100 focus-visible:border-b-0 focus-visible:outline focus-visible:outline-primaryColor">
+                    <!-- show Password -->
+                    <img src="../../src/assets/images/eyePassword.png" alt="show password" width="20" height="20"
+                        class="cursor-pointer transition-all duration-700 opacity-40 hover:opacity-100"
+                        id="show-register-password">
+                </div>
+                <!-- repeat password -->
+                <div class="flex justify-center items-center gap-2">
+                    <input type="password" name="password" id="register-rePassword" placeholder="تکرار رمز عبور"
+                        class="p-2 w-full relative border-b border-b-primaryColor rounded-md text-primaryColor transition-all duration-100 focus-visible:border-b-0 focus-visible:outline focus-visible:outline-primaryColor">
+                    <!-- show Password -->
+                    <img src="../../src/assets/images/eyePassword.png" alt="show password" width="20" height="20"
+                        class="cursor-pointer transition-all duration-700 opacity-40 hover:opacity-100"
+                        id="show-register-rePassword">
+                </div>
+                <!-- submit button -->
+                <button type="submit"
+                    class="bg-primaryColor text-white p-2 rounded-md hover:bg-primaryColorHover transition-all duration-300">ثبت
+                    نام</button>
+            </form>
+        </div>
+    </main>
 
+
+    <!-- scripts -->
+    <script src="../../src/scripts/showPassword.js"></script>
 </body>
 
 </html>
