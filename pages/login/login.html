@@ -37,15 +37,19 @@
                         ؟</a></span>
             </form>
             <div class="flex gap-3">
-                <div
+                <div id="login-with-google"
                     class="flex justify-center items-center gap-2 w-full bg-slate-100 p-4 rounded-md cursor-pointer shadow-sm hover:bg-slate-200 transition-all duration-300">
-                    <span>ثبت نام با گوگل</span>
-                    <img src="../../src/assets/images/google.png" alt="google register" width="30" height="30">
+                    <span id="login-with-google-text" class="inset-0 transition-opacity transform scale-100">ثبت نام با
+                        گوگل</span>
+                    <img src="../../src/assets/images/google.png" alt="google register" width="30" height="30"
+                        id="login-with-google-icon">
                 </div>
-                <div
+                <div id="login-with-github"
                     class="flex justify-center items-center gap-2 w-full bg-slate-100 p-4 rounded-md cursor-pointer shadow-sm hover:bg-slate-200 transition-all duration-300">
-                    <span>ثبت نام با گیت هاب</span>
-                    <img src="../../src/assets/images/github.png" alt="github register" width="30" height="30">
+                    <span id="login-with-github-text" class="inset-0 transition-opacity transform scale-100">ثبت نام با
+                        گیت هاب</span>
+                    <img src="../../src/assets/images/github.png" alt="github register" width="30" height="30"
+                        id="login-with-github-icon">
                 </div>
             </div>
             <div class="w-full flex justify-center items-center">
@@ -92,6 +96,7 @@
 
 
     <!-- scripts -->
+    <script src="../../src/scripts/loginPageScripts.js"></script>
     <script src="../../src/scripts/showPassword.js"></script>
 </body>
 

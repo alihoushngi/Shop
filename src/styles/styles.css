@@ -89,3 +89,8 @@ body {
 .activeLink:hover {
   color: #265da2;
 }
+
+.hidden {
+  opacity: 0;
+  transition: opacity 300ms ease; /* Transition effect on opacity property with duration of 300ms */
+}
