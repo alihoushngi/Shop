@@ -64,6 +64,8 @@ const loginFormValidation = (e) => {
   ) {
     window.alert("رمز عبور نمی‌تواند شامل فاصله یا نقطه باشد");
   } else {
+    // ? add name to local storage
+    localStorage.setItem("name", loginFromName.value);
     window.location.href = "/";
   }
 };
@@ -127,6 +129,8 @@ const registerFormValidation = (e) => {
   } else if (registerFormRePassword.value !== registerFormPassword.value) {
     window.alert("رمز عبور تکراری با رمز عبور اصلی یکسان نیست");
   } else {
+    // ? add name to local storage
+    localStorage.setItem("name", registerFormName.value);
     window.location.href = "/";
   }
 };
