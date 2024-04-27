@@ -1,5 +1,6 @@
-// login with github and google icon and text
+// todo login with github and google icon and text
 
+// ! login buttons design
 // Google
 const loginGoogleWrapper = document.querySelector("#login-with-google");
 const loginGoogleText = document.querySelector("#login-with-google-text");
@@ -41,3 +42,30 @@ loginGithubWrapper.addEventListener("mouseout", function () {
   loginGithubIcon.style.width = "30px";
   loginGithubIcon.style.position = "unset";
 });
+
+// ! form validation
+// * login form validation
+const loginForm = document.querySelector("#login-form");
+const loginFromName = document.querySelector("#login-name");
+const loginFromPassword = document.querySelector("#login-password");
+
+const loginFormValidation = (e) => {
+  e.preventDefault();
+  if (loginFromName.value === "" || loginFromName.value.length < 3) {
+    window.alert("نام کاربری باید بیشتر از ۳ کاراکتر باشد");
+  } else if (
+    loginFromPassword.value === "" ||
+    loginFromPassword.value.length < 6
+  ) {
+    window.alert("رمز عبور باید بیشتر از ۶ کاراکتر باشد");
+  } else if (
+    loginFromPassword.value.includes(" ") ||
+    loginFromPassword.value.includes(".")
+  ) {
+    window.alert("رمز عبور نمی‌تواند شامل فاصله یا نقطه باشد");
+  } else {
+    window.location.href = "/";
+  }
+};
+
+loginForm.addEventListener("submit", loginFormValidation);

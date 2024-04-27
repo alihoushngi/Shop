@@ -16,7 +16,8 @@
     <main class="bg-white mx-48 flex gap-3 p-10 rounded-md">
         <!-- login form -->
         <div class="w-1/2 flex flex-col gap-3">
-            <form action="#" class="flex text-sm flex-col p-5 border border-gray-200 rounded-md gap-8 shadow-sm">
+            <form id="login-form" action="#"
+                class="flex text-sm flex-col p-5 border border-gray-200 rounded-md gap-8 shadow-sm">
                 <!-- name -->
                 <input type="text" name="name" id="login-name" placeholder="نام کاربری یا ایمیل"
                     class="p-2 border-b border-b-primaryColor rounded-md text-primaryColor transition-all duration-100 focus-visible:border-b-0 focus-visible:outline focus-visible:outline-primaryColor">
@@ -30,7 +31,7 @@
                         id="show-login-password">
                 </div>
                 <!-- submit button -->
-                <button type="submit"
+                <button id="login-form-submit" type="submit"
                     class="bg-primaryColor text-white p-2 rounded-md hover:bg-primaryColorHover transition-all duration-300">ورود</button>
                 <!-- forget password -->
                 <span class="text-center"><a href="" class="text-primaryColor text-sm">رمزم چی بود
