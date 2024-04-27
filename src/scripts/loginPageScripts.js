@@ -54,6 +54,11 @@ const loginFormValidation = (e) => {
   if (loginFromName.value === "" || loginFromName.value.length < 3) {
     window.alert("نام کاربری باید بیشتر از ۳ کاراکتر باشد");
   } else if (
+    loginFromName.value.includes(" ") ||
+    loginFromName.value.includes(".")
+  ) {
+    window.alert("نام کاربری نمی‌تواند شامل فاصله یا نقطه باشد");
+  } else if (
     loginFromPassword.value === "" ||
     loginFromPassword.value.length < 6
   ) {
@@ -84,6 +89,11 @@ const registerFormValidation = (e) => {
   e.preventDefault();
   if (registerFormName.value === "" || registerFormName.value.length < 3) {
     window.alert("نام باید بیشتر از ۳ کاراکتر باشد");
+  } else if (
+    registerFormName.value.includes(" ") ||
+    registerFormName.value.includes(".")
+  ) {
+    window.alert("نام کاربری نمی‌تواند شامل فاصله یا نقطه باشد");
   } else if (
     registerFormUserName.value === "" ||
     registerFormUserName.value.length < 3
