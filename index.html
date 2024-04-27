@@ -29,12 +29,15 @@
                     <a href="./pages/contactUs/contact-us.html">ارتباط با ما</a>
                 </li>
             </ul>
-            <ul class="flex gap-3 p-3 items-center flex-row-reverse w-full">
-                <li><img src="./src/assets/images/basket.png" alt="" class="w-6"></li>
-                <li>
+            <ul class="flex gap-3 p-3 items-center flex-row-reverse w-full" id="navbar-left-side">
+                <li><img src="./src/assets/images/basket.png" alt="basket" class="w-6"></li>
+                <li id="login">
                     <a href="./pages/login/login.html">
-                        <img src="./src/assets/images/profile.png" alt="" class="w-6">
+                        <img src="./src/assets/images/profile.png" alt="login button" class="w-6">
                     </a>
+                </li>
+                <li id="exit" class="cursor-pointer hidden">
+                    <img src="./src/assets/images/exit.png" alt="exit button" class="w-6">
                 </li>
             </ul>
         </div>
@@ -155,6 +158,7 @@
     <script src="./src/scripts/bestSell.js"></script>
     <script src="./src/scripts/expSell.js"></script>
     <script src="./src/scripts/feature.js"></script>
+    <script src="./src/scripts/userFinder.js"></script>
 </body>
 
 </html>
