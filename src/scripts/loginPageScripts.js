@@ -69,3 +69,66 @@ const loginFormValidation = (e) => {
 };
 
 loginForm.addEventListener("submit", loginFormValidation);
+
+// * register form validation
+const registerForm = document.querySelector("#register-form");
+const registerFormName = document.querySelector("#register-name");
+const registerFormUserName = document.querySelector("#register-username");
+const registerFormEmail = document.querySelector("#register-email");
+const registerFormPassword = document.querySelector("#register-password");
+const registerFormRePassword = document.querySelector("#register-rePassword");
+
+const registerFormValidation = (e) => {
+  e.preventDefault();
+  if (registerFormName.value === "" || registerFormName.value.length < 3) {
+    window.alert("نام باید بیشتر از ۳ کاراکتر باشد");
+  } else if (
+    registerFormUserName.value === "" ||
+    registerFormUserName.value.length < 3
+  ) {
+    window.alert("نام کاربری باید بیشتر از ۳ کاراکتر باشد");
+  } else if (
+    registerFormUserName.value.includes(" ") ||
+    registerFormUserName.value.includes(".")
+  ) {
+    window.alert("نام کاربری نمی‌تواند شامل فاصله یا نقطه باشد");
+  } else if (
+    registerFormEmail.value === "" ||
+    registerFormEmail.value.length < 3
+  ) {
+    window.alert("ایمیل باید بیشتر از ۳ کاراکتر باشد");
+  } else if (registerFormEmail.value.includes(" ")) {
+    window.alert("ایمیل نمی‌تواند شامل فاصله باشد");
+  } else if (
+    !registerFormEmail.value.includes("@") ||
+    !registerFormEmail.value.includes(".com")
+  ) {
+    window.alert("ایمیل به درستی وارد نشده است");
+  } else if (
+    registerFormPassword.value === "" ||
+    registerFormPassword.value.length < 6
+  ) {
+    window.alert("رمز عبور باید بیشتر از ۶ کاراکتر باشد");
+  } else if (
+    registerFormPassword.value.includes(" ") ||
+    registerFormPassword.value.includes(".")
+  ) {
+    window.alert("رمز عبور نمی‌تواند شامل فاصله یا نقطه باشد");
+  } else if (
+    registerFormRePassword.value === "" ||
+    registerFormRePassword.value.length < 6
+  ) {
+    window.alert("رمز عبور تکراری باید بیشتر از ۶ کاراکتر باشد");
+  } else if (
+    registerFormRePassword.value.includes(" ") ||
+    registerFormRePassword.value.includes(".")
+  ) {
+    window.alert("رمز عبور تکراری نمی‌تواند شامل فاصله یا نقطه باشد");
+  } else if (registerFormRePassword.value !== registerFormPassword.value) {
+    window.alert("رمز عبور تکراری با رمز عبور اصلی یکسان نیست");
+  } else {
+    window.location.href = "/";
+  }
+};
+
+registerForm.addEventListener("submit", registerFormValidation);
