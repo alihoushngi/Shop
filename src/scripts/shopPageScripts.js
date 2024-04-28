@@ -12,6 +12,17 @@ fetch("https://fakestoreapi.com/products/categories")
   .then((res) => res.json())
   .then((result) => {
     result.map((item, index) => {
+      // translate category
+      if (item === "electronics") {
+        item = "الکترونیک";
+      } else if (item === "jewelery") {
+        item = "جواهرات";
+      } else if (item === "men's clothing") {
+        item = "لباس مردانه";
+      } else if (item === "women's clothing") {
+        item = "لباس زنانه";
+      }
+
       html += `
       <li key="${index}">
         <input type="checkbox" name="${item}" id="${item}" value="${item}"/>
