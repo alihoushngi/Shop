@@ -27,19 +27,21 @@ const formSubmitHandler = (e) => {
         });
         productsFound.forEach((item) => {
           showProduct += `
-            <div class="bg-gray-100 p-4 rounded-md shadow-custom flex justify-between items-center">
-                <div class="flex items-center gap-2">
-                    <div>
-                        <img src="${item.image}" width="60"/>
-                    </div>
-                    <div>
-                        <h2 class="text-primaryColor font-semibold text-xl">${item.title}</h2>
-                        <span class="text-gray-400 text-sm">${item.category}</span>
-                    </div>
-                </div>
-                <div>
-                    <span class="text-primaryColor text-md">${item.price}</span>
-                </div>
+            <div class="bg-gray-100 p-4 rounded-md shadow-custom">
+            <a href="/pages/shop/product/product.html?id=${item.id}" class="flex justify-between items-center">
+              <div class="flex items-center gap-2">
+                  <div>
+                      <img src="${item.image}" width="60"/>
+                  </div>
+                  <div>
+                      <h2 class="text-primaryColor font-semibold text-xl">${item.title}</h2>
+                      <span class="text-gray-400 text-sm">${item.category}</span>
+                  </div>
+              </div>
+              <div>
+                  <span class="text-primaryColor text-md">${item.price}</span>
+              </div>
+            </a>
             </div>
             `;
         });
