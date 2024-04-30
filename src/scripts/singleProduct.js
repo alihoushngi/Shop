@@ -50,10 +50,10 @@ function renderProductDetails(product) {
             element.title = titleText;
 
             productCategoryData += `
-            <div class="w-full rounded-md shadow-custom p-2 ">
+            <div class="w-full rounded-md shadow-custom p-2 transition-all duration-300 hover:shadow-lg hover:border">
               <a href="/pages/shop/product/product.html?id=${element.id}" class="flex flex-col justify-center items-center gap-4">
                 <div>
-                  <img src="${element.image}" alt="${element.title}" width="50"/>
+                  <img src="${element.image}" alt="${element.title}" class="w-[100px] h-[100px] object-fill"/>
                 </div>
                 <div>
                   <h4 class="text-sm">${element.title}</h4>

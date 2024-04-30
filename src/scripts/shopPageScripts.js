@@ -114,7 +114,7 @@ function displayProducts(data) {
     elements.description = descriptionText;
 
     newProduct += `
-        <div class="w-[32%] max-h-[inherit] min-h-[450px] relative items-center shadow-custom rounded-md transition-all duration-300 ease-in-out hover:cursor-pointer">
+        <div class="w-[32%] max-h-[inherit] min-h-[450px] relative items-center shadow-custom rounded-md transition-all duration-300 ease-in-out hover:cursor-pointer hover:shadow-lg">
           <a href="/pages/shop/product/product.html?id=${elements.id}" class="flex flex-col justify-between h-full items-center px-2 py-4 gap-2">
             <div class="flex justify-center items-center">
               <img src="${elements.image}" alt="" class="object-cover bg-no-repeat bg-top w-fit rounded-md max-h-[140px] min-h-[140px]">

@@ -53,7 +53,7 @@ const expSell = async () => {
 
       // create my html
       html += `
-      <div class="w-1/3 max-h-[inherit] min-h-[400px] flex flex-col justify-start relative items-center shadow-custom px-2 py-4 rounded-md gap-2 transition-all duration-300 ease-in-out hover:cursor-pointer">
+      <div class="w-1/3 max-h-[inherit] min-h-[400px] flex flex-col justify-start relative items-center shadow-custom px-2 py-4 rounded-md gap-2 transition-all duration-300 ease-in-out hover:cursor-pointer hover:shadow-lg">
       <a href="/pages/shop/product/product.html?id=${data.id}">
       <div class="flex justify-center items-center mb-4">
       <img src="${data.image}" alt="" class="object-cover bg-no-repeat bg-top w-fit rounded-md max-h-[140px] min-h-[140px]">
