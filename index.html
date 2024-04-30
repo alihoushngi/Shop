@@ -11,7 +11,7 @@
 
 <body>
     <!-- navbar section -->
-    <nav class="w-full flex flex-col justify-between items-center px-14 py-4">
+    <nav class="w-full flex flex-col justify-between items-center px-14 py-4 relative">
         <!-- menu section -->
         <div class="w-full flex justify-between items-center">
             <ul class="flex gap-5 p-3 w-full" id="menu">
@@ -42,13 +42,15 @@
             </ul>
         </div>
         <!-- search section -->
-        <form action="#" class="w-full flex border-secondaryColor border-[0.5px] justify-between rounded-md p-1">
-            <input type="text" placeholder="جستجو ..."
+        <form action="#" class="w-full flex border-secondaryColor border-[0.5px] justify-between rounded-md p-1"
+            id="searchForm">
+            <input id="searchInput" type="text" placeholder="جستجو ..."
                 class="w-full px-4 py-1 focus:outline-0 text-primaryColor text-sm font-medium">
-            <button class="bg-primaryColor rounded-md p-1 flex justify-center items-center w-fit">
+            <button type="submit" class="bg-primaryColor rounded-md p-1 flex justify-center items-center w-fit">
                 <img src="./src/assets/images/search.png" alt="" width="20">
             </button>
         </form>
+        <div id="formResult" class="absolute top-28 left-3 right-3 flex gap-1 flex-col z-50"></div>
     </nav>
     <!-- header section -->
     <header class="flex w-full justify-center items-center px-16 py-3 gap-3 my-10">
@@ -159,6 +161,7 @@
     <script src="./src/scripts/expSell.js"></script>
     <script src="./src/scripts/feature.js"></script>
     <script src="./src/scripts/userFinder.js"></script>
+    <script src="./src/scripts/search.js"></script>
 </body>
 
 </html>
