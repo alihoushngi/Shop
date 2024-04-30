@@ -27,7 +27,7 @@ const formSubmitHandler = (e) => {
         });
         productsFound.forEach((item) => {
           showProduct += `
-            <div class="bg-gray-100 p-4 rounded-md shadow-md flex justify-between items-center">
+            <div class="bg-gray-100 p-4 rounded-md shadow-custom flex justify-between items-center">
                 <div class="flex items-center gap-2">
                     <div>
                         <img src="${item.image}" width="60"/>

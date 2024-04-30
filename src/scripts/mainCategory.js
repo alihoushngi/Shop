@@ -11,7 +11,7 @@ const cat = async () => {
       result.map((data) => {
         html += `
                 <a href="/${data.split("'", 1)}">
-                  <li class="flex justify-center items-center w-40 h-24 rounded-md capitalize cursor-pointer transition-all duration-300 hover:shadow-md bg-primaryColor text-white hover:text-primaryColor hover:bg-white">
+                  <li class="flex justify-center items-center w-40 h-24 rounded-md capitalize cursor-pointer transition-all duration-300 hover:shadow-custom bg-primaryColor text-white hover:text-primaryColor hover:bg-white">
                     ${data}
                   </li>
                 </a>

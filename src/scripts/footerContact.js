@@ -29,7 +29,7 @@ socialMediaArray.map((data) => {
   console.log(data);
   socialMedia += `
   <a href="${data.link}">
-    <img class="bg-white p-2 rounded-md transition-all duration-300 hover:shadow-md" src="${data.icon}" width="40"/>
+    <img class="bg-white p-2 rounded-md transition-all duration-300 hover:shadow-custom" src="${data.icon}" width="40"/>
   </a>
   `;
 });
