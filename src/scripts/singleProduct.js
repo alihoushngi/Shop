@@ -84,7 +84,7 @@ function renderProductDetails(product) {
     <div class="flex flex-col gap-4">
       <div class="flex gap-5 items-stretch">
         <div class="w-1/4 flex justify-center items-center rounded-md shadow-custom p-10">
-            <img src="${product.image}" alt="${product.title}" class="object-cover bg-no-repeat bg-top w-fit rounded-md max-h-[300px] min-h-[300px]"/>
+            <img src="${product.image}" alt="${product.title}" class="object-cover bg-no-repeat bg-top w-fit rounded-md"/>
         </div>
         <div class="w-2/4 flex flex-col justify-center gap-4 rounded-md shadow-custom p-14">
             <h1 class="text-xl text-center font-bold text-primaryColor">${product.title}</h1>
