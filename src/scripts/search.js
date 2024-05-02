@@ -27,7 +27,7 @@ const formSubmitHandler = (e) => {
         });
         productsFound.forEach((item) => {
           showProduct += `
-            <div class="bg-gray-100 p-4 rounded-md shadow-custom">
+            <div class="bg-white p-4 rounded-md hover:shadow-custom border border-slate-200 transition-all duration-300 hover:bg-slate-200">
             <a href="/pages/shop/product/product.html?id=${item.id}" class="flex justify-between items-center">
               <div class="flex items-center gap-2">
                   <div>

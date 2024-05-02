@@ -10,7 +10,7 @@ const cat = async () => {
     .then((result) => {
       result.map((data) => {
         html += `
-                <a href="/${data.split("'", 1)}">
+                <a href="/pages/shop/category/category.html?id=${data}" target="_blank">
                   <li class="flex justify-center items-center w-40 h-24 rounded-md capitalize cursor-pointer transition-all duration-300 hover:shadow-custom bg-primaryColor text-white hover:text-primaryColor hover:bg-white">
                     ${data}
                   </li>
