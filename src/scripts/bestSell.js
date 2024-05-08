@@ -148,6 +148,9 @@ bestSell();
 eventListenerOnBestSell();
 function eventListenerOnBestSell() {
   bestSellResult.addEventListener("click", buyBestSellProduct);
+
+  // remove product
+  productInBasket.addEventListener("click", removeProduct);
 }
 
 // function for handler buy best sell product
@@ -201,16 +204,59 @@ function addToCard(data) {
 }
 
 // create function for open or close basket
-productCard.addEventListener("click", openBasket);
+productCard.addEventListener("click", basketHandler);
 
-function openBasket(e) {
-  e.preventDefault();
+function basketHandler(e) {
+  // create element and function for remove all button
+  if (productInBasket.innerHTML) {
+    let deleteAllButton = document.querySelector("button");
+    deleteAllButton.className =
+      "w-full bg-primaryColor text-white p-3 rounded-md transition-all duration-300 hover:shadow-custom hover:bg-primaryColorHover";
+    deleteAllButton.innerHTML = "Delete All Product";
+    productInBasket.appendChild(deleteAllButton);
+    deleteAllButton.addEventListener("click", removeAllProduct);
+  }
   const basket = e.target.nextElementSibling;
   if (basket.className.includes("hidden")) {
     basket.classList.remove("hidden");
     basket.classList.add("flex");
+    if (!productInBasket.innerHTML) {
+      productInBasket.innerHTML = "Please select some product to buy";
+      setTimeout(() => {
+        productInBasket.innerHTML = "";
+        basket.classList.remove("flex");
+        basket.classList.add("hidden");
+      }, 1500);
+    }
   } else {
     basket.classList.remove("flex");
     basket.classList.add("hidden");
   }
+}
+
+// handel remove button
+function removeProduct(e) {
+  if (e.target.classList.contains("remove")) {
+    e.target.parentElement.parentElement.parentElement.remove();
+  }
+
+  if (!productInBasket.innerHTML) {
+    const basket = productCard.nextElementSibling;
+    if (basket.className.includes("hidden")) {
+      basket.classList.remove("hidden");
+      basket.classList.add("flex");
+    } else {
+      basket.classList.remove("flex");
+      basket.classList.add("hidden");
+    }
+  }
+}
+
+// function for remove all product button
+function removeAllProduct(e) {
+  e.preventDefault();
+  productInBasket.innerHTML = "";
+  setTimeout(() => {
+    window.alert("All Product Removed");
+  }, 100);
 }
