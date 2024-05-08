@@ -173,12 +173,21 @@ function getProductInfo(product) {
 
 // function for add to cart
 function addToCard(data) {
-  console.log({ data, productCard });
+  console.log(data);
 }
 
 productCard.addEventListener("click", openBasket);
 
 function openBasket(e) {
   e.preventDefault();
-  console.log(e.target.nextElementSibling);
+  const basket = e.target.nextElementSibling;
+  basket.classList.forEach((classs) => {
+    if (classs === "hidden") {
+      basket.classList.remove("hidden");
+      basket.classList.add("flex");
+    } else if (classs === "flex") {
+      basket.classList.remove("flex");
+      basket.classList.add("hidden");
+    }
+  });
 }
