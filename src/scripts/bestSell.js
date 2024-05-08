@@ -1,6 +1,7 @@
 // select data result section
 const bestSellResult = document.querySelector("#best-sell");
 const productCard = document.querySelector("#product-card");
+const productInBasket = document.querySelector("#product-in-basket");
 
 // start and end number
 let startNumber = null;
@@ -173,21 +174,43 @@ function getProductInfo(product) {
 
 // function for add to cart
 function addToCard(data) {
-  console.log(data);
+  // create division for wrap on product
+  let division = document.createElement("div");
+  division.className = "flex w-full justify-between items-center gap-3";
+
+  // jsx for build html to show product when added to basket
+  division.innerHTML = `
+  <div class="flex justify-center items-center gap-3">
+    <div class="shadow-custom p-6 rounded-md">
+      <img src="${data.image}" class="object-contain h-14 w-14"/> 
+    </div>
+  </div>
+  <div class="flex flex-col justify-center items-center gap-3">
+    <div>
+      <h3>${data.title}</h3>
+    </div>
+    <div class="flex justify-between items-center gap-3 w-full">
+        <span>${data.price} $</span>
+        <a href="#" data-id="${data.id}" class="remove text-red-700">X</a>
+    </div>
+  </div>
+  `;
+
+  // append my jsx to result section
+  productInBasket.appendChild(division);
 }
 
+// create function for open or close basket
 productCard.addEventListener("click", openBasket);
 
 function openBasket(e) {
   e.preventDefault();
   const basket = e.target.nextElementSibling;
-  basket.classList.forEach((classs) => {
-    if (classs === "hidden") {
-      basket.classList.remove("hidden");
-      basket.classList.add("flex");
-    } else if (classs === "flex") {
-      basket.classList.remove("flex");
-      basket.classList.add("hidden");
-    }
-  });
+  if (basket.className.includes("hidden")) {
+    basket.classList.remove("hidden");
+    basket.classList.add("flex");
+  } else {
+    basket.classList.remove("flex");
+    basket.classList.add("hidden");
+  }
 }
