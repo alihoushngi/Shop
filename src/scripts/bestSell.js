@@ -1,5 +1,6 @@
 // select data result section
 const bestSellResult = document.querySelector("#best-sell");
+const productCard = document.querySelector("#product-card");
 
 // start and end number
 let startNumber = null;
@@ -71,20 +72,20 @@ const bestSell = async () => {
           <img src="${data.image}" alt="" class="object-cover bg-no-repeat bg-top w-fit rounded-md max-h-[140px] min-h-[140px]">
           </div>
           <h4 class="text-[15px] font-bold uppercase min-h-12">${data.title}</h4>
-          <span class="capitalize text-secondaryColor">قیمت : <span class="text-primaryColor">${data.price}$</span></span>
+          <span class="capitalize text-secondaryColor">قیمت : <span class="text-primaryColor price">${data.price}$</span></span>
           <p id="description" class="text-[12px] text-justify font-thin w-[95%] mb-8">${descriptionText}</p>
           <span class="text-sm text-primaryColor absolute bottom-14 z-20"><a>${data.category}</a></span>
-          <div class="flex gap-2 absolute bottom-4 z-10">
-              <div
-                  class="text-white bg-primaryColor w-[30px] h-[30px] flex justify-center items-center text-xl rounded-md leading-[0] shadow-custom transition-all duration-300 ease-in-out cursor-pointer hover:bg-white hover:text-primaryColor hover:border">
+          <div class="flex gap-2 absolute bottom-4 z-10" id="addToCartButton">
+              <div data-id="${data.id}"
+                  class="addToCartButton text-white bg-primaryColor w-[30px] h-[30px] flex justify-center items-center text-xl rounded-md leading-[0] shadow-custom transition-all duration-300 ease-in-out cursor-pointer hover:bg-white hover:text-primaryColor hover:border">
                   +</div>
-              <div
+              <div data-id="${data.id}"
                   class="bg-white w-[100px] flex justify-center items-center border rounded-md transition-all duration-300 ease-in-out grayscale hover:grayscale-0">
                   <img src="./src/assets/images/basket.png" alt=""
                       class="w-[30px]  transition-all duration-300 ease-in-out">
               </div>
-              <div
-                  class="text-white bg-primaryColor w-[30px] h-[30px] flex justify-center items-center text-xl rounded-md leading-[0] shadow-custom transition-all duration-300 ease-in-out cursor-pointer hover:bg-white hover:text-primaryColor hover:border">
+              <div data-id="${data.id}"
+                  class="removeFromCartButton text-white bg-primaryColor w-[30px] h-[30px] flex justify-center items-center text-xl rounded-md leading-[0] shadow-custom transition-all duration-300 ease-in-out cursor-pointer hover:bg-white hover:text-primaryColor hover:border">
                   -</div>
           </div>
         </a>
@@ -94,7 +95,90 @@ const bestSell = async () => {
     // show data on document
 
     bestSellResult.innerHTML = html;
+    // findButtons();
   });
 };
 
 bestSell();
+
+// function findButtons() {
+//   const addToCartButtons = document.querySelectorAll(".addToCartButton");
+//   const removeFromCartButtons = document.querySelectorAll(
+//     ".removeFromCartButton"
+//   );
+
+//   addToCartButtons.forEach((button) => {
+//     button.addEventListener("click", addToCartFunction);
+//   });
+
+//   removeFromCartButtons.forEach((button) => {
+//     button.addEventListener("click", removeFromCartFunction);
+//   });
+// }
+
+// const localStorageChecker = (id) => {
+//   const isProduct = localStorage.getItem("product");
+//   if (isProduct == id) {
+//     localStorage.removeItem("product");
+//   } else {
+//     console.log("nist");
+//   }
+// };
+
+// function addToCartFunction(event) {
+//   const parentElement = event.target.parentNode.parentNode;
+//   const productId = parentElement
+//     .querySelector("a")
+//     .getAttribute("href")
+//     .split("=")[1];
+//   localStorage.setItem("product", productId);
+// }
+
+// function removeFromCartFunction(event) {
+//   const parentElement = event.target.parentNode.parentNode;
+//   const productId = parentElement
+//     .querySelector("a")
+//     .getAttribute("href")
+//     .split("=")[1];
+//   localStorageChecker(productId);
+// }
+
+// show where click on best sell result section
+eventListenerOnBestSell();
+function eventListenerOnBestSell() {
+  bestSellResult.addEventListener("click", buyBestSellProduct);
+}
+
+// function for handler buy best sell product
+function buyBestSellProduct(e) {
+  e.preventDefault();
+  // find which product selected division
+  if (e.target.classList.contains("addToCartButton")) {
+    const selectedProduct = e.target.parentElement.parentElement;
+    // send to a function to save on local storage and show on basket button
+    getProductInfo(selectedProduct);
+  }
+}
+
+// function for save on local storage and show on basket button
+function getProductInfo(product) {
+  const productInfo = {
+    image: product.querySelector("img").src,
+    title: product.querySelector("h4").textContent,
+    price: product.querySelector("span.price").textContent.split("$")[0],
+    id: product.querySelector(".addToCartButton").getAttribute("data-id"),
+  };
+  addToCard(productInfo);
+}
+
+// function for add to cart
+function addToCard(data) {
+  console.log({ data, productCard });
+}
+
+productCard.addEventListener("click", openBasket);
+
+function openBasket(e) {
+  e.preventDefault();
+  console.log(e.target.nextElementSibling);
+}
