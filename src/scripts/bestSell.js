@@ -102,48 +102,6 @@ const bestSell = async () => {
 
 bestSell();
 
-// function findButtons() {
-//   const addToCartButtons = document.querySelectorAll(".addToCartButton");
-//   const removeFromCartButtons = document.querySelectorAll(
-//     ".removeFromCartButton"
-//   );
-
-//   addToCartButtons.forEach((button) => {
-//     button.addEventListener("click", addToCartFunction);
-//   });
-
-//   removeFromCartButtons.forEach((button) => {
-//     button.addEventListener("click", removeFromCartFunction);
-//   });
-// }
-
-// const localStorageChecker = (id) => {
-//   const isProduct = localStorage.getItem("product");
-//   if (isProduct == id) {
-//     localStorage.removeItem("product");
-//   } else {
-//     console.log("nist");
-//   }
-// };
-
-// function addToCartFunction(event) {
-//   const parentElement = event.target.parentNode.parentNode;
-//   const productId = parentElement
-//     .querySelector("a")
-//     .getAttribute("href")
-//     .split("=")[1];
-//   localStorage.setItem("product", productId);
-// }
-
-// function removeFromCartFunction(event) {
-//   const parentElement = event.target.parentNode.parentNode;
-//   const productId = parentElement
-//     .querySelector("a")
-//     .getAttribute("href")
-//     .split("=")[1];
-//   localStorageChecker(productId);
-// }
-
 // show where click on best sell result section
 eventListenerOnBestSell();
 function eventListenerOnBestSell() {
@@ -151,6 +109,9 @@ function eventListenerOnBestSell() {
 
   // remove product
   productInBasket.addEventListener("click", removeProduct);
+
+  // get data from local storage on loaded
+  document.addEventListener("DOMContentLoaded", getProductOnLoaded);
 }
 
 // function for handler buy best sell product
@@ -166,13 +127,19 @@ function buyBestSellProduct(e) {
 
 // function for save on local storage and show on basket button
 function getProductInfo(product) {
+  // create object with data we need to keep
   const productInfo = {
     image: product.querySelector("img").src,
     title: product.querySelector("h4").textContent,
     price: product.querySelector("span.price").textContent.split("$")[0],
     id: product.querySelector(".addToCartButton").getAttribute("data-id"),
   };
+
+  // add to basket
   addToCard(productInfo);
+
+  // add to local storage
+  saveToLocalStorage(productInfo);
 }
 
 // function for add to cart
@@ -203,6 +170,27 @@ function addToCard(data) {
   productInBasket.appendChild(division);
 }
 
+// add to local storage Function
+function saveToLocalStorage(ProductData) {
+  // check local storage before save
+  let products = getProductFromLocalStorage();
+  products.push(ProductData);
+  localStorage.setItem("products", JSON.stringify(products));
+}
+
+// check data is on local storage or not
+function getProductFromLocalStorage() {
+  let products;
+  let productInLocalStorage = localStorage.getItem("products");
+  if (productInLocalStorage) {
+    products = JSON.parse(productInLocalStorage);
+  } else {
+    products = [];
+  }
+
+  return products;
+}
+
 // create function for open or close basket
 productCard.addEventListener("click", basketHandler);
 
@@ -220,14 +208,6 @@ function basketHandler(e) {
   if (basket.className.includes("hidden")) {
     basket.classList.remove("hidden");
     basket.classList.add("flex");
-    if (!productInBasket.innerHTML) {
-      productInBasket.innerHTML = "Please select some product to buy";
-      setTimeout(() => {
-        productInBasket.innerHTML = "";
-        basket.classList.remove("flex");
-        basket.classList.add("hidden");
-      }, 1500);
-    }
   } else {
     basket.classList.remove("flex");
     basket.classList.add("hidden");
@@ -236,9 +216,16 @@ function basketHandler(e) {
 
 // handel remove button
 function removeProduct(e) {
+  e.preventDefault();
+  let product, productId;
+
   if (e.target.classList.contains("remove")) {
     e.target.parentElement.parentElement.parentElement.remove();
+    product = e.target.parentElement.parentElement.parentElement;
+    productId = product.querySelector("a").getAttribute("data-id");
   }
+
+  removeProductFromLocalStorage(productId);
 
   if (!productInBasket.innerHTML) {
     const basket = productCard.nextElementSibling;
@@ -252,11 +239,36 @@ function removeProduct(e) {
   }
 }
 
+// function for remove selected product from local storage
+function removeProductFromLocalStorage(id) {
+  let products = JSON.parse(localStorage.getItem("products"));
+  products.forEach(function (product, index) {
+    if (product.id === id) {
+      products.splice(index, 1);
+    }
+  });
+  localStorage.setItem("products", JSON.stringify(products));
+}
+
 // function for remove all product button
 function removeAllProduct(e) {
   e.preventDefault();
   productInBasket.innerHTML = "";
+  clearLocalStorage();
   setTimeout(() => {
     window.alert("All Product Removed");
   }, 100);
+}
+
+// clear local storage function
+function clearLocalStorage() {
+  localStorage.clear();
+}
+
+// function for get data on loaded page
+function getProductOnLoaded() {
+  let productsList = getProductFromLocalStorage();
+  productsList.forEach((data) => {
+    addToCard(data);
+  });
 }
