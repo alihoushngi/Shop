@@ -1,7 +1,5 @@
 // select data result section
 const bestSellResult = document.querySelector("#best-sell");
-const productCard = document.querySelector("#product-card");
-const productInBasket = document.querySelector("#product-in-basket");
 
 // start and end number
 let startNumber = null;
@@ -76,18 +74,10 @@ const bestSell = async () => {
           <span class="capitalize text-secondaryColor">قیمت : <span class="text-primaryColor price">${data.price}$</span></span>
           <p id="description" class="text-[12px] text-justify font-thin w-[95%] mb-8">${descriptionText}</p>
           <span class="text-sm text-primaryColor absolute bottom-14 z-20"><a>${data.category}</a></span>
-          <div class="flex gap-2 absolute bottom-4 z-10" id="addToCartButton">
-              <div data-id="${data.id}"
-                  class="addToCartButton text-white bg-primaryColor w-[30px] h-[30px] flex justify-center items-center text-xl rounded-md leading-[0] shadow-custom transition-all duration-300 ease-in-out cursor-pointer hover:bg-white hover:text-primaryColor hover:border">
-                  +</div>
-              <div data-id="${data.id}"
-                  class="bg-white w-[100px] flex justify-center items-center border rounded-md transition-all duration-300 ease-in-out grayscale hover:grayscale-0">
-                  <img src="./src/assets/images/basket.png" alt=""
-                      class="w-[30px]  transition-all duration-300 ease-in-out">
-              </div>
-              <div data-id="${data.id}"
-                  class="removeFromCartButton text-white bg-primaryColor w-[30px] h-[30px] flex justify-center items-center text-xl rounded-md leading-[0] shadow-custom transition-all duration-300 ease-in-out cursor-pointer hover:bg-white hover:text-primaryColor hover:border">
-                  -</div>
+          <div class="flex gap-2 absolute bottom-4 z-10 w-[90%]">
+          <div data-id="${data.id}"
+              class="addToCartButton text-white bg-primaryColor w-full text-sm h-[30px] flex justify-center items-center rounded-md leading-[0] shadow-custom transition-all duration-300 ease-in-out cursor-pointer hover:bg-white hover:text-primaryColor hover:border">
+              اضافه کردن به سبد خرید</div>
           </div>
         </a>
       </div>
@@ -101,174 +91,3 @@ const bestSell = async () => {
 };
 
 bestSell();
-
-// show where click on best sell result section
-eventListenerOnBestSell();
-function eventListenerOnBestSell() {
-  bestSellResult.addEventListener("click", buyBestSellProduct);
-
-  // remove product
-  productInBasket.addEventListener("click", removeProduct);
-
-  // get data from local storage on loaded
-  document.addEventListener("DOMContentLoaded", getProductOnLoaded);
-}
-
-// function for handler buy best sell product
-function buyBestSellProduct(e) {
-  e.preventDefault();
-  // find which product selected division
-  if (e.target.classList.contains("addToCartButton")) {
-    const selectedProduct = e.target.parentElement.parentElement;
-    // send to a function to save on local storage and show on basket button
-    getProductInfo(selectedProduct);
-  }
-}
-
-// function for save on local storage and show on basket button
-function getProductInfo(product) {
-  // create object with data we need to keep
-  const productInfo = {
-    image: product.querySelector("img").src,
-    title: product.querySelector("h4").textContent,
-    price: product.querySelector("span.price").textContent.split("$")[0],
-    id: product.querySelector(".addToCartButton").getAttribute("data-id"),
-  };
-
-  // add to basket
-  addToCard(productInfo);
-
-  // add to local storage
-  saveToLocalStorage(productInfo);
-}
-
-// function for add to cart
-function addToCard(data) {
-  // create division for wrap on product
-  let division = document.createElement("div");
-  division.className = "flex w-full justify-between items-center gap-3";
-
-  // jsx for build html to show product when added to basket
-  division.innerHTML = `
-  <div class="flex justify-center items-center gap-3">
-    <div class="shadow-custom p-6 rounded-md">
-      <img src="${data.image}" class="object-contain h-14 w-14"/> 
-    </div>
-  </div>
-  <div class="flex flex-col justify-center items-center gap-3">
-    <div>
-      <h3>${data.title}</h3>
-    </div>
-    <div class="flex justify-between items-center gap-3 w-full">
-        <span>${data.price} $</span>
-        <a href="#" data-id="${data.id}" class="remove text-red-700">X</a>
-    </div>
-  </div>
-  `;
-
-  // append my jsx to result section
-  productInBasket.appendChild(division);
-}
-
-// add to local storage Function
-function saveToLocalStorage(ProductData) {
-  // check local storage before save
-  let products = getProductFromLocalStorage();
-  products.push(ProductData);
-  localStorage.setItem("products", JSON.stringify(products));
-}
-
-// check data is on local storage or not
-function getProductFromLocalStorage() {
-  let products;
-  let productInLocalStorage = localStorage.getItem("products");
-  if (productInLocalStorage) {
-    products = JSON.parse(productInLocalStorage);
-  } else {
-    products = [];
-  }
-
-  return products;
-}
-
-// create function for open or close basket
-productCard.addEventListener("click", basketHandler);
-
-function basketHandler(e) {
-  // create element and function for remove all button
-  if (productInBasket.innerHTML) {
-    let deleteAllButton = document.querySelector("button");
-    deleteAllButton.className =
-      "w-full bg-primaryColor text-white p-3 rounded-md transition-all duration-300 hover:shadow-custom hover:bg-primaryColorHover";
-    deleteAllButton.innerHTML = "Delete All Product";
-    productInBasket.appendChild(deleteAllButton);
-    deleteAllButton.addEventListener("click", removeAllProduct);
-  }
-  const basket = e.target.nextElementSibling;
-  if (basket.className.includes("hidden")) {
-    basket.classList.remove("hidden");
-    basket.classList.add("flex");
-  } else {
-    basket.classList.remove("flex");
-    basket.classList.add("hidden");
-  }
-}
-
-// handel remove button
-function removeProduct(e) {
-  e.preventDefault();
-  let product, productId;
-
-  if (e.target.classList.contains("remove")) {
-    e.target.parentElement.parentElement.parentElement.remove();
-    product = e.target.parentElement.parentElement.parentElement;
-    productId = product.querySelector("a").getAttribute("data-id");
-  }
-
-  removeProductFromLocalStorage(productId);
-
-  if (!productInBasket.innerHTML) {
-    const basket = productCard.nextElementSibling;
-    if (basket.className.includes("hidden")) {
-      basket.classList.remove("hidden");
-      basket.classList.add("flex");
-    } else {
-      basket.classList.remove("flex");
-      basket.classList.add("hidden");
-    }
-  }
-}
-
-// function for remove selected product from local storage
-function removeProductFromLocalStorage(id) {
-  let products = JSON.parse(localStorage.getItem("products"));
-  products.forEach(function (product, index) {
-    if (product.id === id) {
-      products.splice(index, 1);
-    }
-  });
-  localStorage.setItem("products", JSON.stringify(products));
-}
-
-// function for remove all product button
-function removeAllProduct(e) {
-  e.preventDefault();
-  productInBasket.innerHTML = "";
-  clearLocalStorage();
-  setTimeout(() => {
-    window.alert("All Product Removed");
-  }, 100);
-}
-
-// clear local storage function
-function clearLocalStorage() {
-  localStorage.clear();
-}
-
-// function for get data on loaded page
-function getProductOnLoaded() {
-  let productsList = getProductFromLocalStorage();
-  productsList.forEach((data) => {
-    addToCard(data);
-  });
-}

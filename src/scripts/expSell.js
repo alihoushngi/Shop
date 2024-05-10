@@ -60,21 +60,13 @@ const expSell = async () => {
       </div>
       <h4 class="text-[15px] font-bold uppercase min-h-12">${data.title}</h4>
       <span class="capitalize text-secondaryColor">قیمت : <span
-              class="text-primaryColor">${data.price}$</span></span>
+              class="text-primaryColor price">${data.price}$</span></span>
       <p id="description" class="text-[12px] text-justify font-thin w-[95%] mb-8">${descriptionText}</p>
       <span class="text-sm text-primaryColor absolute bottom-14 z-20"><a>${data.category}</a></span>
-      <div class="flex gap-2 absolute bottom-4 z-10">
-          <div
-              class="text-white bg-primaryColor w-[30px] h-[30px] flex justify-center items-center text-xl rounded-md leading-[0] shadow-custom transition-all duration-300 ease-in-out cursor-pointer hover:bg-white hover:text-primaryColor hover:border">
-              +</div>
-          <div
-              class="bg-white w-[100px] flex justify-center items-center border rounded-md transition-all duration-300 ease-in-out grayscale hover:grayscale-0">
-              <img src="./src/assets/images/basket.png" alt=""
-                  class="w-[30px]  transition-all duration-300 ease-in-out">
-          </div>
-          <div
-              class="text-white bg-primaryColor w-[30px] h-[30px] flex justify-center items-center text-xl rounded-md leading-[0] shadow-custom transition-all duration-300 ease-in-out cursor-pointer hover:bg-white hover:text-primaryColor hover:border">
-              -</div>
+      <div class="flex gap-2 absolute bottom-4 z-10 w-[90%]">
+          <div data-id="${data.id}"
+              class="addToCartButton text-white bg-primaryColor w-full text-sm h-[30px] flex justify-center items-center rounded-md leading-[0] shadow-custom transition-all duration-300 ease-in-out cursor-pointer hover:bg-white hover:text-primaryColor hover:border">
+              اضافه کردن به سبد خرید</div>
       </div>
       </a>
   </div>
