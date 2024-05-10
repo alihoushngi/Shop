@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../src/styles/styles.css">
     <link href="../../src/styles/output.css" rel="stylesheet">
-    <title>Contact Us</title>
+    <title>Checkout</title>
 </head>
 
 <body>
@@ -30,13 +30,7 @@
                 </li>
             </ul>
             <ul class="flex gap-3 p-3 items-center flex-row-reverse w-full" id="navbar-left-side">
-                <li class="cursor-pointer"><img src="../../src/assets/images/basket.png" alt="basket"
-                        class="w-6 relative" id="product-card">
-                    <div
-                        class="hidden absolute z-30 top-14 left-16 min-w-[400px] min-h-[100px] bg-white shadow-custom rounded-md text-center justify-center items-center">
-                        <div id="product-in-basket" class="p-3 flex flex-col items-start justify-center gap-3"></div>
-                    </div>
-                </li>
+                <li><img src="../../src/assets/images/basket.png" alt="basket" class="w-6"></li>
                 <li id="login">
                     <a href="../../pages/login/login.html">
                         <img src="../../src/assets/images/profile.png" alt="login button" class="w-6">
@@ -58,48 +52,27 @@
         </form>
         <div id="formResult" class="absolute top-28 left-3 right-3 flex gap-1 flex-col z-50"></div>
     </nav>
-    <!-- header section -->
-    <header class="p-4">
-        <h1 class="text-center text-2xl font-bold text-primaryColor mb-4">ارتباط با ما</h1>
-        <h2 class="text-center text-md font-normal text-secondaryColor">جهت نقد ، شکایات و پرسیدن سوال می توانید از طریق
-            فرم زیر با ما در ارتباط باشید</h2>
-    </header>
-
 
     <!-- main section -->
-    <main class="px-16 py-3 my-3 flex gap-4 justify-between items-center">
-        <div class="w-1/2">
-            <form action="#" class="flex flex-col shadow-custom p-5 rounded-md">
-                <!-- name -->
-                <label for="name" class="text-primaryColor text-sm my-3">نام و نام خانوادگی</label>
-                <input
-                    class="rounded-md p-2 bg-gray-100 text-primaryColor focus-visible:outline-1 focus-visible:outline-secondaryColor"
-                    type="text" name="name" id="name" required>
-                <!-- number -->
-                <label for="number" class="text-primaryColor text-sm my-3">شماره تماس</label>
-                <input
-                    class="rounded-md p-2 bg-gray-100 text-primaryColor focus-visible:outline-1 focus-visible:outline-secondaryColor"
-                    type="text" name="number" id="number" placeholder="09" required>
-                <!-- email -->
-                <label for="email" class="text-primaryColor text-sm my-3">ایمیل</label>
-                <input
-                    class="rounded-md p-2 bg-gray-100 text-primaryColor focus-visible:outline-1 focus-visible:outline-secondaryColor"
-                    type="email" name="email" id="email">
-                <!-- text -->
-                <label for="text" class="text-primaryColor text-sm my-3">متن خود را بنویسید</label>
-                <textarea
-                    class="rounded-md p-2 bg-gray-100 text-primaryColor focus-visible:outline-1 focus-visible:outline-secondaryColor"
-                    name="text" id="text" cols="50" rows="3" required></textarea>
-                <!-- submit button -->
-                <button type="submit"
-                    class="bg-primaryColor text-white my-3 p-2 rounded-md transition-all duration-300 hover:bg-primaryColorHover">ارسال</button>
-            </form>
-        </div>
-        <div class="w-1/2 flex justify-center items-center">
-            <img src="../../src/assets/images/contactUsImage.png" alt="form-image">
+    <main class="px-16 py-3 my-3 flex gap-4 justify-center items-start min-h-[340px]">
+        <div id="product-for-checkout" class="flex flex-col items-center justify-center w-1/2"></div>
+        <div class="flex items-center justify-center w-1/2">
+            <div
+                class="flex flex-col w-full h-full shadow-custom justify-center items-stretch px-16 py-1 my-1 rounded-md min-h-[200px]">
+                <div id="sum"></div>
+                <div class="w-full p-4">
+                    <span class="text-[10px] text-center font-extralight text-gray-700 block">
+                        لطفا قبل از پرداخت نهایی از سفارشات خودتان را چک کنید
+                    </span>
+                </div>
+                <div>
+                    <button
+                        class="bg-primaryColor hover:bg-primaryColorHover text-center p-2 w-full flex items-center justify-center text-white rounded-md transition-all duration-300 hover:shadow-custom">پرداخت
+                        نهایی</button>
+                </div>
+            </div>
         </div>
     </main>
-
 
     <!-- footer section -->
     <footer class="bg-primaryColor min-w-full min-h-5 py-20 px-12 text-white flex gap-3 items-start">
@@ -138,12 +111,10 @@
         </div>
     </footer>
 
-
     <!-- scripts -->
-    <script src="../../src/scripts/activeLinkFinder.js"></script>
     <script src="../../src/scripts/userFinder.js"></script>
     <script src="../../src/scripts/search.js"></script>
-    <script src="../../src/scripts/basketHandler.js"></script>
+    <script src="../../src/scripts/checkout.js"></script>
 </body>
 
 </html>

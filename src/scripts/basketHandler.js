@@ -95,15 +95,18 @@ function removeProduct(e) {
 
 // create element and function for remove all button
 let deleteAllButton = document.createElement("button");
-let goToBuy = document.createElement("button");
+let goToBuy = document.createElement("a");
+goToBuy.addEventListener("click", function () {
+  window.location = "/pages/checkout/checkout.html";
+});
 deleteAllButton.className =
   "w-full bg-red-800 text-sm text-white py-1 px-4 rounded-md transition-all duration-300 hover:shadow-custom hover:bg-red-600";
 goToBuy.className =
   "w-full bg-primaryColor text-sm text-white py-1 px-4 rounded-md transition-all duration-300 hover:shadow-custom hover:bg-primaryColorHover";
 deleteAllButton.innerHTML = "پاک کردن همه محصولات از سبد خرید";
 goToBuy.innerHTML = "رفتن به صفحه پرداخت";
-pInBasket.appendChild(deleteAllButton);
 pInBasket.appendChild(goToBuy);
+pInBasket.appendChild(deleteAllButton);
 deleteAllButton.addEventListener("click", removeAllProduct);
 
 // function for basket handler
