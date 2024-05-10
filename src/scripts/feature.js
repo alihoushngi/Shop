@@ -13,7 +13,7 @@ let features = "";
 
 featureList.map((data) => {
   features += `
-                  <li class="flex justify-center items-center w-40 h-24 rounded-md capitalize cursor-pointer transition-all duration-300 hover:shadow-custom bg-primaryColor text-white hover:text-primaryColor hover:bg-white">
+                  <li class="max-lg:w-32 max-lg:h-10 max-lg:text-sm max-md:w-full flex justify-center items-center w-40 h-24 rounded-md capitalize cursor-pointer transition-all duration-300 hover:shadow-custom bg-primaryColor text-white hover:text-primaryColor hover:bg-white">
                     ${data}
                   </li>
                 `;
