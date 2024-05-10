@@ -11,20 +11,20 @@
 
 <body>
     <!-- navbar section -->
-    <nav class="w-full flex flex-col justify-between items-center px-14 py-4 relative">
+    <nav class="w-full flex flex-col justify-between items-center px-14 py-4 relative max-lg:px-5">
         <!-- menu section -->
         <div class="w-full flex justify-between items-center">
-            <ul class="flex gap-5 p-3 w-full" id="menu">
+            <ul class="flex gap-5 p-3 w-full max-md:gap-2 text-nowrap" id="menu">
                 <li
-                    class="text-secondaryColor text-sm font-semibold transition-all duration-300 ease-in-out hover:text-primaryColor ">
+                    class="text-secondaryColor text-sm max-md:text-xs font-semibold transition-all duration-300 ease-in-out hover:text-primaryColor ">
                     <a href="/">خانه</a>
                 </li>
                 <li
-                    class="text-secondaryColor text-sm font-semibold transition-all duration-300 ease-in-out hover:text-primaryColor ">
+                    class="text-secondaryColor text-sm max-md:text-xs font-semibold transition-all duration-300 ease-in-out hover:text-primaryColor ">
                     <a href="../../shop/shop.html">فروشگاه</a>
                 </li>
                 <li
-                    class="text-secondaryColor text-sm font-semibold transition-all duration-300 ease-in-out hover:text-primaryColor ">
+                    class="text-secondaryColor text-sm max-md:text-xs font-semibold transition-all duration-300 ease-in-out hover:text-primaryColor ">
                     <a href="../../contactUs/contact-us.html">ارتباط با ما</a>
                 </li>
             </ul>
@@ -59,8 +59,8 @@
     </nav>
 
     <!-- main section -->
-    <main class="px-16 py-3 my-10">
-        <h1 class="font-semibold text-2xl text-center mb-3" id="cat-name"></h1>
+    <main class="px-16 py-3 my-10 max-lg:my-2 max-lg:px-5 max-lg:flex-col">
+        <h1 class="font-semibold text-2xl max-lg:text-xl text-center mb-3" id="cat-name"></h1>
         <div id="category-detail"
             class="w-full shadow-custom rounded-md p-5 h-full flex gap-2 flex-auto flex-wrap justify-center items-stretch">
         </div>
@@ -68,15 +68,16 @@
 
 
     <!-- footer section -->
-    <footer class="bg-primaryColor min-w-full min-h-5 py-20 px-12 text-white flex gap-3 items-start">
-        <div class="flex justify-center flex-col w-1/3 gap-3">
+    <footer
+        class="bg-primaryColor min-w-full min-h-5 py-20 px-12 text-white flex gap-3 items-start max-md:py-10 max-md:flex-col max-lg:items-center max-lg:justify-center">
+        <div class="flex justify-center flex-col w-1/3 gap-3 max-md:w-full">
             <span class="text-xl font-bold">فروشگاه جاوا اسکریپت</span>
             <span class="text-xs font-thin text-justify">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و
                 متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
             </span>
         </div>
-        <div class="flex justify-center flex-col w-1/3 gap-3">
+        <div class="flex justify-center flex-col w-1/3 gap-3 max-md:w-full">
             <span class="text-xl text-center">راه های ارتباطی</span>
             <div id="footer-contact" class="flex gap-3 justify-center items-center">
                 <a href="https://www.linkedin.com/in/alihoushangi/">
@@ -97,7 +98,7 @@
                 </a>
             </div>
         </div>
-        <div class="flex justify-center w-1/3 gap-3 bg-white bg-opacity-65 p-3 rounded-sm">
+        <div class="flex justify-center w-1/3 gap-3 bg-white bg-opacity-65 p-3 rounded-sm max-lg:hidden">
             <img src="../../../src/assets/images/samandehi.png" alt="Samandehi" width="80">
             <img src="../../../src/assets/images/enamad-1.png" alt="Enamd" width="80">
             <img src="../../../src/assets/images/zarin-palpng.parspng.com_.png" alt="Zarinpal" width="80">

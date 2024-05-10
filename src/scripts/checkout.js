@@ -24,13 +24,13 @@ function loadDataFromLocalStorage() {
     products.forEach((element) => {
       prices.push(JSON.parse(element.price));
       html += `
-      <div class="flex shadow-custom px-10 py-5 rounded-md w-full my-1 gap-4 justify-between items-center">
+      <div class="flex shadow-custom px-10 py-5 rounded-md w-full my-1 gap-4 justify-between items-center max-lg:px-3">
         <img src="${element.image}" class="h-[100px] w-[100px] object-contain"/>
         <div>
-            <h4 class="text-3xl font-semibold">${element.title}</h4>
-            <span class="text-xl">قیمت : ${element.price} $ </span>
+            <h4 class="text-3xl font-semibold max-lg:text-base">${element.title}</h4>
+            <span class="text-xl max-lg:text-sm">قیمت : ${element.price} $ </span>
         </div>
-        <a data-id="${element.id}" id="remove-button" class="remove cursor-pointer text-red-800 text-2xl font-extrabold transition-all duration-300 hover:text-red-600">X</a>
+        <a data-id="${element.id}" id="remove-button" class="remove cursor-pointer text-red-800 text-2xl max-lg:text-xl font-extrabold transition-all duration-300 hover:text-red-600">X</a>
       </div>
       `;
     });

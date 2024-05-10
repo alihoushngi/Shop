@@ -82,11 +82,11 @@ function renderProductDetails(product) {
 
   detailContainer.innerHTML = `
     <div class="flex flex-col gap-4">
-      <div class="flex gap-5 items-stretch">
-        <div class="w-1/4 flex justify-center items-center rounded-md shadow-custom p-10">
+      <div class="flex max-lg:flex-wrap max-lg:gap-3 max-lg:justify-between gap-5 items-stretch">
+        <div class="w-1/4 max-lg:w-[49%] max-md:w-full flex justify-center items-center rounded-md shadow-custom p-10">
             <img src="${product.image}" alt="${product.title}" class="object-cover bg-no-repeat bg-top w-fit rounded-md"/>
         </div>
-        <div class="w-2/4 flex flex-col justify-center gap-4 rounded-md shadow-custom p-14">
+        <div class="w-2/4 max-lg:w-[49%] max-md:w-full flex flex-col justify-center gap-4 rounded-md shadow-custom p-14">
             <h4 class="text-xl text-center font-bold text-primaryColor">${product.title}</h4>
             <p class="text-sm text-left font-extralight">${product.description}</p>
             <h6 class="text-right text-primaryColor">دسته بندی: ${product.category}</h6>
@@ -112,7 +112,7 @@ function renderProductDetails(product) {
                 </div>
             </div>
         </div>
-        <div class="w-1/4 gap-4 flex flex-col justify-center items-start rounded-md shadow-custom p-10">
+        <div class="w-1/4 max-lg:w-full gap-4 flex flex-col justify-center items-start rounded-md shadow-custom p-10">
         <p class="capitalize text-secondaryColor">قیمت : <span class="text-primaryColor price">${product.price}$</span></p>
             <button class="addToCartButton w-full bg-primaryColor text-white p-3 rounded-md transition-all duration-300 hover:bg-blue-600 hover:shadow-custom">افزودن به سبد خرید</button>
             <button class="w-full bg-green-600 text-white p-3 rounded-md transition-all duration-300 hover:bg-green-400 hover:shadow-custom">افزودن به علاقه مندی ها</button>
@@ -120,7 +120,7 @@ function renderProductDetails(product) {
       </div>
       <div class="w-full flex flex-col justify-center items-center rounded-md shadow-custom p-6 gap-4">
         <h3 class="text-base text-center font-bold text-primaryColor">محصولات مرتبط</h3>
-        <div id="catProductResult" class="flex gap-2 w-full">
+        <div id="catProductResult" class="flex max-lg:flex-wrap gap-2 w-full">
         </div>
       </div>
     </div>

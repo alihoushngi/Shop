@@ -54,7 +54,7 @@ const catProduct = async () => {
 
       // create my html
       html += `
-      <div class="flex justify-center items-center relative w-[32%] max-h-[inherit] min-h-[450px] shadow-custom rounded-md transition-all duration-300 ease-in-out hover:cursor-pointer hover:shadow-lg">
+      <div class="flex justify-center items-center relative w-[32%] max-lg:w-[49%] max-md:w-full max-h-[inherit] min-h-[450px] shadow-custom rounded-md transition-all duration-300 ease-in-out hover:cursor-pointer hover:shadow-lg">
       <a href="/pages/shop/product/product.html?id=${element.id}" class="flex flex-col justify-between h-full items-center px-2 py-4 gap-2">
         <div class="flex justify-center items-center mb-4">
           <img src="${element.image}" alt="${element.title}" class="object-cover bg-no-repeat bg-top w-fit rounded-md max-h-[140px] min-h-[140px]">
@@ -62,7 +62,6 @@ const catProduct = async () => {
         <h4 class="text-[15px] font-bold uppercase min-h-12">${element.title}</h4>
         <span class="capitalize text-secondaryColor">قیمت : <span class="price text-primaryColor">${element.price}$</span></span>
         <p id="description" class="text-[12px] text-justify font-thin w-[95%] mb-8">${descriptionText}</p>
-        <span class="text-sm text-primaryColor">${element.category}</span>
       </a>
       <div class="flex gap-2 absolute bottom-4 z-10 w-[90%]">
           <div data-id="${element.id}"
