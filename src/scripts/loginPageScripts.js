@@ -1,48 +1,5 @@
 // todo login with github and google icon and text
 
-// ! login buttons design
-// Google
-const loginGoogleWrapper = document.querySelector("#login-with-google");
-const loginGoogleText = document.querySelector("#login-with-google-text");
-const loginGoogleIcon = document.querySelector("#login-with-google-icon");
-
-// Github
-const loginGithubWrapper = document.querySelector("#login-with-github");
-const loginGithubText = document.querySelector("#login-with-github-text");
-const loginGithubIcon = document.querySelector("#login-with-github-icon");
-
-// Add mouseover event listener for google
-loginGoogleWrapper.addEventListener("mouseover", function () {
-  // Show the icon and hide the text
-  loginGoogleText.classList.add("hidden");
-  loginGoogleIcon.style.width = "100px";
-  loginGoogleIcon.style.position = "absolute";
-});
-
-// Add mouseout event listener for google
-loginGoogleWrapper.addEventListener("mouseout", function () {
-  // Show the text and hide the icon
-  loginGoogleText.classList.remove("hidden");
-  loginGoogleIcon.style.width = "30px";
-  loginGoogleIcon.style.position = "unset";
-});
-
-// Add mouseover event listener for github
-loginGithubWrapper.addEventListener("mouseover", function () {
-  // Show the icon and hide the text
-  loginGithubText.classList.add("hidden");
-  loginGithubIcon.style.width = "100px";
-  loginGithubIcon.style.position = "absolute";
-});
-
-// Add mouseout event listener for github
-loginGithubWrapper.addEventListener("mouseout", function () {
-  // Show the text and hide the icon
-  loginGithubText.classList.remove("hidden");
-  loginGithubIcon.style.width = "30px";
-  loginGithubIcon.style.position = "unset";
-});
-
 // ! form validation
 // * login form validation
 const loginForm = document.querySelector("#login-form");
@@ -146,3 +103,23 @@ const registerFormValidation = (e) => {
 };
 
 registerForm.addEventListener("submit", registerFormValidation);
+
+// * change display forms on mobile version
+const registerRoute = document.querySelector("#register-route");
+const loginRoute = document.querySelector("#login-route");
+
+const registerRouteChanger = document.querySelector("#register-route-changer");
+const loginRouteChanger = document.querySelector("#login-route-changer");
+
+// func for button route changer
+// ? register
+registerRouteChanger.addEventListener("click", function () {
+  loginRoute.classList.add("max-lg:hidden");
+  registerRoute.classList.remove("max-lg:hidden");
+});
+
+// ? login
+loginRouteChanger.addEventListener("click", function () {
+  registerRoute.classList.add("max-lg:hidden");
+  loginRoute.classList.remove("max-lg:hidden");
+});

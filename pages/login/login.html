@@ -13,9 +13,9 @@
     <header class="flex justify-center items-center p-6">
         <h1 class="text-2xl font-extrabold text-white">ثبت نام یا ورود</h1>
     </header>
-    <main class="bg-white mx-48 flex gap-3 p-10 rounded-md">
+    <main class="bg-white mx-28 flex gap-3 p-6 rounded-md max-lg:mx-10 max-lg:flex-col ">
         <!-- login form -->
-        <div class="w-1/2 flex flex-col gap-3">
+        <div class="w-1/2 flex flex-col gap-3 max-lg:w-full" id="login-route">
             <form id="login-form" action="#"
                 class="flex text-sm flex-col p-5 border border-gray-200 rounded-md gap-8 shadow-custom">
                 <!-- name -->
@@ -39,26 +39,27 @@
             </form>
             <div class="flex gap-3">
                 <div id="login-with-google"
-                    class="flex justify-center items-center gap-2 w-full bg-slate-100 p-4 rounded-md cursor-pointer shadow-custom hover:bg-slate-200 transition-all duration-300">
-                    <span id="login-with-google-text" class="inset-0 transition-opacity transform scale-100">ثبت نام با
+                    class="flex justify-center items-center gap-2 w-full bg-slate-100 p-2 rounded-md cursor-pointer shadow-custom hover:bg-slate-200 transition-all duration-300">
+                    <span id="login-with-google-text"
+                        class="inset-0 transition-opacity transform scale-100 max-lg:text-sm">ثبت نام با
                         گوگل</span>
-                    <img src="../../src/assets/images/google.png" alt="google register" width="30" height="30"
-                        id="login-with-google-icon">
                 </div>
                 <div id="login-with-github"
-                    class="flex justify-center items-center gap-2 w-full bg-slate-100 p-4 rounded-md cursor-pointer shadow-custom hover:bg-slate-200 transition-all duration-300">
-                    <span id="login-with-github-text" class="inset-0 transition-opacity transform scale-100">ثبت نام با
+                    class="flex justify-center items-center gap-2 w-full bg-slate-100 p-2 rounded-md cursor-pointer shadow-custom hover:bg-slate-200 transition-all duration-300">
+                    <span id="login-with-github-text"
+                        class="inset-0 transition-opacity transform scale-100 max-lg:text-sm">ثبت نام با
                         گیت هاب</span>
-                    <img src="../../src/assets/images/github.png" alt="github register" width="30" height="30"
-                        id="login-with-github-icon">
                 </div>
             </div>
-            <div class="w-full flex justify-center items-center">
+            <div class="w-full flex flex-col justify-center items-center gap-2">
                 <span class="text-center text-sm font-thin">تمامی حقوق شما محفوظه پیش ما نگران نباش</span>
+                <div id="register-route-changer"
+                    class="flex items-center justify-center w-full text-center bg-slate-100 shadow-custom rounded-md py-2 hover:bg-white lg:hidden">
+                    ثبت نام</div>
             </div>
         </div>
         <!-- register form -->
-        <div class="w-1/2">
+        <div class="w-1/2 max-lg:w-full max-lg:hidden" id="register-route">
             <form id="register-form" action="#"
                 class="flex text-sm flex-col p-5 border border-gray-200 rounded-md gap-8 shadow-custom">
                 <!-- name -->
@@ -93,6 +94,8 @@
                     class="bg-primaryColor text-white p-2 rounded-md hover:bg-primaryColorHover transition-all duration-300">ثبت
                     نام</button>
             </form>
+            <div class="mt-3 text-center bg-slate-100 shadow-custom rounded-md py-2 hover:bg-white lg:hidden"
+                id="login-route-changer">ورود</div>
         </div>
     </main>
 
