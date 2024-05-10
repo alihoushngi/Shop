@@ -29,7 +29,13 @@
                 </li>
             </ul>
             <ul class="flex gap-3 p-3 items-center flex-row-reverse w-full" id="navbar-left-side">
-                <li><img src="../../src/assets/images/basket.png" alt="basket" class="w-6"></li>
+                <li class="cursor-pointer"><img src="../../src/assets/images/basket.png" alt="basket"
+                        class="w-6 relative" id="product-card">
+                    <div
+                        class="hidden absolute z-30 top-14 left-16 min-w-[400px] min-h-[100px] bg-white shadow-custom rounded-md text-center justify-center items-center">
+                        <div id="product-in-basket" class="p-3 flex flex-col items-start justify-center gap-3"></div>
+                    </div>
+                </li>
                 <li id="login">
                     <a href="../../pages/login/login.html">
                         <img src="../../src/assets/images/profile.png" alt="login button" class="w-6">
@@ -112,6 +118,8 @@
     <script src="../../src/scripts/fetchProduct.js"></script>
     <script src="../../src/scripts/shopPageScripts.js"></script>
     <script src="../../src/scripts/search.js"></script>
+    <script src="../../src/scripts/basketHandler.js"></script>
+    <script src="../../src/scripts/addToCart.js"></script>
 </body>
 
 </html>

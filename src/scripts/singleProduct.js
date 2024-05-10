@@ -87,11 +87,11 @@ function renderProductDetails(product) {
             <img src="${product.image}" alt="${product.title}" class="object-cover bg-no-repeat bg-top w-fit rounded-md"/>
         </div>
         <div class="w-2/4 flex flex-col justify-center gap-4 rounded-md shadow-custom p-14">
-            <h1 class="text-xl text-center font-bold text-primaryColor">${product.title}</h1>
+            <h4 class="text-xl text-center font-bold text-primaryColor">${product.title}</h4>
             <p class="text-sm text-left font-extralight">${product.description}</p>
-            <span class="text-right text-primaryColor">دسته بندی: ${product.category}</span>
+            <h6 class="text-right text-primaryColor">دسته بندی: ${product.category}</h6>
             <div class="flex justify-start items-center gap-3">
-                <span class="text-sm text-center text-primaryColor">راه های ارتباطی</span>
+                <h6 class="text-sm text-center text-primaryColor">راه های ارتباطی</h6>
                 <div id="footer-contact" class="flex gap-3 justify-center items-center">
                     <a href="https://www.linkedin.com/in/alihoushangi/">
                         <img class="bg-white p-1 rounded-md transition-all duration-300 hover:shadow-custom"
@@ -113,8 +113,8 @@ function renderProductDetails(product) {
             </div>
         </div>
         <div class="w-1/4 gap-4 flex flex-col justify-center items-start rounded-md shadow-custom p-10">
-            <p class="text-xl text-primaryColor font-semibold">قیمت : $ ${product.price}</p>
-            <button class="w-full bg-primaryColor text-white p-3 rounded-md transition-all duration-300 hover:bg-blue-600 hover:shadow-custom">افزودن به سبد خرید</button>
+        <p class="capitalize text-secondaryColor">قیمت : <span class="text-primaryColor price">${product.price}$</span></p>
+            <button class="addToCartButton w-full bg-primaryColor text-white p-3 rounded-md transition-all duration-300 hover:bg-blue-600 hover:shadow-custom">افزودن به سبد خرید</button>
             <button class="w-full bg-green-600 text-white p-3 rounded-md transition-all duration-300 hover:bg-green-400 hover:shadow-custom">افزودن به علاقه مندی ها</button>
         </div>
       </div>

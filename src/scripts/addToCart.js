@@ -11,7 +11,7 @@ setTimeout(() => {
     e.preventDefault();
     // find which product selected division
     if (e.target.classList.contains("addToCartButton")) {
-      const selectedProduct = e.target.parentElement.parentElement;
+      let selectedProduct = e.target.parentElement.parentElement;
       // send to a function to save on local storage and show on basket button
       getProductInformation(selectedProduct);
     }
@@ -42,7 +42,7 @@ setTimeout(() => {
 
     // jsx for build html to show product when added to basket
     division.innerHTML = `
-    <div class="flex justify-center items-center gap-3">
+    <div class="flex justify-center items-center gap-3 z-50">
       <div class="shadow-custom p-6 rounded-md">
         <img src="${data.image}" class="object-contain h-14 w-14"/> 
       </div>
@@ -84,4 +84,4 @@ setTimeout(() => {
 
     return products;
   }
-}, 1000);
+}, 2000);

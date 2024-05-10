@@ -705,6 +705,10 @@ video {
   z-index: 50;
 }
 
+.z-30 {
+  z-index: 30;
+}
+
 .float-start {
   float: inline-start;
 }
