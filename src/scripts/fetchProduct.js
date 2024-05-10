@@ -42,7 +42,7 @@ fetch("https://fakestoreapi.com/products")
       element.description = descriptionText;
 
       proSection += `
-      <div class="relative w-[32%] max-h-[inherit] min-h-[450px] shadow-custom rounded-md transition-all duration-300 ease-in-out hover:cursor-pointer hover:shadow-lg flex justify-center items-center">
+      <div class="relative w-[32%] max-md:w-full max-lg:w-[48%] max-h-[inherit] min-h-[450px] shadow-custom rounded-md transition-all duration-300 ease-in-out hover:cursor-pointer hover:shadow-lg flex justify-center items-center">
         <a href="/pages/shop/product/product.html?id=${element.id}" class="flex flex-col justify-between h-full items-center px-2 py-4 gap-2">
           <div class="flex justify-center items-center mb-4">
             <img src="${element.image}" alt="${element.title}" class="object-cover bg-no-repeat bg-top w-fit rounded-md max-h-[140px] min-h-[140px]">
